@@ -67,13 +67,74 @@ for (let i = 0; i < teams.length; i++) {
     addText(teamCard, i)
 }
 
+//aggiungiamo i membri del team dal form
+//ref
+const addBtn = document.getElementById('addMemberButton');
 
+//prendiamo i valori dall'utente
+addBtn.addEventListener('click', function(){
+    let nameInput = document.getElementById('name').value;
+    let roleInput = document.getElementById('role').value;
+    let imgInput = document.getElementById('image').value;
 
-
+    //Validazione per le immagini giuste
+    if ((imgInput < 1) || (imgInput > 4)) {
+        alert('scegli un numero da 1 a 4');
+    } else {
+        addNewTeam(nameInput, roleInput, imgInput)
+    }
+})
 
 
 
 /* FUNCTION */
+function addNewTeam(name, role, imageNum) {
+    //Aggiungiamo un div con classe team-card
+    const teamCard = document.createElement('div');
+    teamCard.classList.add('team-card');
+    teamCont.append(teamCard);
+
+    //aggiungiamo al div card un div con classe card-image
+    const cardImage = document.createElement('div');
+    cardImage.classList.add('card-image');
+    teamCard.append(cardImage);
+
+    //Aggiungiamo un img alla card-image
+    const imgEl = document.createElement('img');
+    cardImage.append(imgEl)
+
+     //Aggiungiamo il div per il testo con classe card-text
+     const cardText = document.createElement('div');
+     cardText.classList.add('card-text')
+     teamCard.append(cardText);
+
+     //aggiungiamo un h3
+    const nameSurname = document.createElement('h3');
+    cardText.append(nameSurname)
+
+    //aggiungiamo un p
+    const paragraph = document.createElement('p');
+    cardText.append(paragraph)
+   
+    //aggiugniamo i valori dati dall'utente
+    imgEl.src = `./img/new-team-member-0${imageNum}.jpg`;
+    nameSurname.innerHTML = `${name}`
+    paragraph.innerHTML = `${role}`
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//Aggiungiamo il testo
 function addText(teamCard, i) {
     //Aggiungiamo il div per il testo con classe card-text
     const cardText = document.createElement('div');
