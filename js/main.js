@@ -55,6 +55,19 @@ const teamCont = document.querySelector('.team-container');
 
 for (let i = 0; i < teams.length; i++) {
     
+    //aggiungiamo l'immagine
+    addImg(i)
+
+
+}
+
+
+
+
+
+/* FUNCTION */
+//Aggiungiamo un immagine
+function addImg(i) {
     //Aggiungiamo un div con classe team-card
     const teamCard = document.createElement('div');
     teamCard.classList.add('team-card');
@@ -71,6 +84,4 @@ for (let i = 0; i < teams.length; i++) {
 
     //Aggiungiamo il link all'immagine
     imgEl.src = `./img/${teams[i].img}`
-
 }
-
