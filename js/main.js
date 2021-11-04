@@ -48,8 +48,6 @@ const teams = [
     },   
 ];
 
-console.log(teams);
-
 //Referenze HTML
 const teamCont = document.querySelector('.team-container');
 
@@ -84,7 +82,6 @@ addBtn.addEventListener('click', function(){
         addNewTeam(nameInput, roleInput, imgInput)
     }
 })
-
 
 
 /* FUNCTION */
@@ -124,16 +121,6 @@ function addNewTeam(name, role, imageNum) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 //Aggiungiamo il testo
 function addText(teamCard, i) {
     //Aggiungiamo il div per il testo con classe card-text
@@ -154,11 +141,6 @@ function addText(teamCard, i) {
     paragraph.innerHTML = teams[i].role
 
 }
-
-
-
-
-
 
 
 //Aggiungiamo un immagine
