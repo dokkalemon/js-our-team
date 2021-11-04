@@ -46,6 +46,27 @@ const teams = [
         name: 'Barbara Ramos',
         role: 'Graphic Designer',
     },   
-]
+];
 
 console.log(teams);
+
+//Referenze HTML
+const teamCont = document.querySelector('.team-container');
+
+for (let i = 0; i < teams.length; i++) {
+    
+    teamCont.innerHTML += `
+    <div class="team-card">
+            <div class="card-image">
+              <img
+                src="img/${teams[i].img}"
+                alt="Wayne Barnett"
+              />
+            </div>
+            <div class="card-text">
+              <h3>Wayne Barnett</h3>
+              <p>Founder & CEO</p>
+            </div>
+          </div>`
+}
+
