@@ -54,10 +54,43 @@ console.log(teams);
 const teamCont = document.querySelector('.team-container');
 
 for (let i = 0; i < teams.length; i++) {
-    
-    //aggiungiamo l'immagine
-    addImg(i)
 
+    //Aggiungiamo un div con classe team-card
+    const teamCard = document.createElement('div');
+    teamCard.classList.add('team-card');
+    teamCont.append(teamCard);
+
+    //aggiungiamo l'immagine
+    addImg(teamCard, i)
+
+    //aggiungiamo il nome
+    addText(teamCard, i)
+}
+
+
+
+
+
+
+
+/* FUNCTION */
+function addText(teamCard, i) {
+    //Aggiungiamo il div per il testo con classe card-text
+    const cardText = document.createElement('div');
+    cardText.classList.add('card-text')
+    teamCard.append(cardText);
+
+    //aggiungiamo un h3
+    const nameSurname = document.createElement('h3');
+    cardText.append(nameSurname)
+
+    //aggiungiamo un p
+    const paragraph = document.createElement('p');
+    cardText.append(paragraph)
+
+    //aggiungiamo le info dell'array
+    nameSurname.innerHTML = teams[i].name
+    paragraph.innerHTML = teams[i].role
 
 }
 
@@ -65,14 +98,10 @@ for (let i = 0; i < teams.length; i++) {
 
 
 
-/* FUNCTION */
-//Aggiungiamo un immagine
-function addImg(i) {
-    //Aggiungiamo un div con classe team-card
-    const teamCard = document.createElement('div');
-    teamCard.classList.add('team-card');
-    teamCont.append(teamCard);
 
+
+//Aggiungiamo un immagine
+function addImg(teamCard, i) {
     //aggiungiamo al div card un div con classe card-image
     const cardImage = document.createElement('div');
     cardImage.classList.add('card-image');
