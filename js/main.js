@@ -55,18 +55,22 @@ const teamCont = document.querySelector('.team-container');
 
 for (let i = 0; i < teams.length; i++) {
     
-    teamCont.innerHTML += `
-    <div class="team-card">
-            <div class="card-image">
-              <img
-                src="img/${teams[i].img}"
-                alt="Wayne Barnett"
-              />
-            </div>
-            <div class="card-text">
-              <h3>Wayne Barnett</h3>
-              <p>Founder & CEO</p>
-            </div>
-          </div>`
+    //Aggiungiamo un div con classe team-card
+    const teamCard = document.createElement('div');
+    teamCard.classList.add('team-card');
+    teamCont.append(teamCard);
+
+    //aggiungiamo al div card un div con classe card-image
+    const cardImage = document.createElement('div');
+    cardImage.classList.add('card-image');
+    teamCard.append(cardImage);
+
+    //Aggiungiamo un img alla card-image
+    const imgEl = document.createElement('img');
+    cardImage.append(imgEl)
+
+    //Aggiungiamo il link all'immagine
+    imgEl.src = `./img/${teams[i].img}`
+
 }
 
